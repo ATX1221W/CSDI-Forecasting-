@@ -1,0 +1,27 @@
+{
+    "train": {
+        "epochs": 15,
+        "batch_size": 6,
+        "lr": 0.001,
+        "itr_per_epoch": 30
+    },
+    "diffusion": {
+        "layers": 4,
+        "channels": 64,
+        "nheads": 6,
+        "diffusion_embedding_dim": 96,
+        "beta_start": 0.0001,
+        "beta_end": 0.02,
+        "num_steps": 75,
+        "schedule": "linear",
+        "is_linear": true,
+        "side_dim": 153
+    },
+    "model": {
+        "is_unconditional": 0,
+        "timeemb": 128,
+        "featureemb": 24,
+        "target_strategy": "test",
+        "num_sample_features": 1
+    }
+}

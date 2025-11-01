@@ -1,0 +1,122 @@
+{
+  "model": {
+    "is_unconditional": false,
+    "timeemb": 256,
+    "featureemb": 32,
+    "target_strategy": "test",
+    "num_sample_features": 2
+  },
+  "diffusion": {
+    "layers": 6,
+    "channels": 96,
+    "nheads": 8,
+    "diffusion_embedding_dim": 128,
+    "beta_start": 0.0001,
+    "beta_end": 0.02,
+    "num_steps": 100,
+    "schedule": "linear",
+    "is_linear": true,
+    "side_dim": 289
+  },
+  "train": {
+    "epochs": 15,
+    "batch_size": 16,
+    "lr": 0.001,
+    "itr_per_epoch": 50,
+    "mask_strategy_probs": {
+      "prefix": 0.5,
+      "random": 0.3,
+      "half": 0.2
+    },
+    "prefix_dropout_range": [
+      0.05,
+      0.15
+    ]
+  },
+  "validation": {
+    "n_batches": 4,
+    "n_samples": 8,
+    "prefix_splits": [
+      0.5,
+      0.7
+    ],
+    "band": [
+      5,
+      95
+    ]
+  },
+  "physics": {
+    "m": 1.0,
+    "k": 1.0,
+    "d": 1.0,
+    "dt": 0.05,
+    "T": 200,
+    "noise_std": 0.05
+  },
+  "steps_cfg": {
+    "min_steps": 3,
+    "max_steps": 6,
+    "min_dwell": 15,
+    "max_dwell": 60,
+    "level_range": [
+      0.0,
+      1.0
+    ],
+    "binary": true,
+    "binary_high_freq": true,
+    "flip_prob": 0.18
+  },
+  "splits": {
+    "train": {
+      "c_values": [
+        0.5,
+        0.7,
+        0.9,
+        1.1,
+        1.3,
+        1.5,
+        2.2,
+        2.3600000000000003,
+        2.52,
+        2.68,
+        2.84,
+        3.0
+      ]
+    },
+    "val": {
+      "c_values": [
+        1.6,
+        1.7,
+        1.8,
+        1.9
+      ]
+    },
+    "test": {
+      "c_values": [
+        0.6,
+        0.8,
+        1.4,
+        2.0,
+        2.6,
+        3.1
+      ]
+    }
+  },
+  "seeds": {
+    "train_base": 12345,
+    "val_base": 22345,
+    "test_base": 32345,
+    "norm_base": 42345
+  },
+  "dataset_sizes": {
+    "train_systems": 12,
+    "val_systems": 4,
+    "train_seqs_per_sys": 10,
+    "val_seqs_per_sys": 5,
+    "test_seqs_per_sys": 5
+  },
+  "x_mean": 0.5918341279029846,
+  "x_std": 0.2164365367422104,
+  "u_mean": 0.5011399984359741,
+  "u_std": 0.4999996886978149
+}
